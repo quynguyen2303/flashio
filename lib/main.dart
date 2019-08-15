@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           title: Text('Flashio'),
         ),
         body: Center(
-          child: Text('Hello, world!'),
+          child: Text('Hello World!'),
         ),
       ),
     );
