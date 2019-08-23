@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'pages/ConversationPageList.dart';
+import 'widgets/chat_app_bar.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,12 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Flashio'),
-        ),
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+        body: ConversationPageList(),
       ),
     );
   }
