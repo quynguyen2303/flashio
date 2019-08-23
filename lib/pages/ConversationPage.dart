@@ -5,6 +5,7 @@ import '../widgets/chat_list.dart';
 import '../widgets/input.dart';
 
 class ConversationPage extends StatefulWidget {
+  const ConversationPage();
   @override
   _ConversationPageState createState() => _ConversationPageState();
 }
