@@ -19,8 +19,8 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
     var textStyle = TextStyle(
         color: Palette.secondaryTextColor); // Text style for everything else
 
-    double width =
-        MediaQuery.of(context).size.width; // Calculate the screen width
+    // double width =
+    //     MediaQuery.of(context).size.width; // Calculate the screen width
 
     return Material(
       child: Container(
