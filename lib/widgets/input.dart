@@ -3,8 +3,10 @@ import '../config/Palette.dart';
 
 class InputWidget extends StatelessWidget {
   final TextEditingController textEditingController =
-      new TextEditingController();
+       TextEditingController();
 
+  InputWidget();
+  
   @override
   Widget build(BuildContext context) {
     return Container(
