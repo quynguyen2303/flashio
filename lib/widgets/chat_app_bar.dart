@@ -6,6 +6,8 @@ import '../config/Assets.dart';
 class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height = 100;
 
+  const ChatAppBar();
+
   @override
   Size get preferredSize => Size.fromHeight(height);
 
@@ -33,8 +35,8 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     // First row shows the attach icon and name
-                    Container(
-                      height: 70 - (width * .06),
+                    Expanded(
+                      flex: 7,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -67,35 +69,36 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ),
                     ),
                     // Second row contains the buttons for media
-                    Container(
-                      height: 23,
-                      padding: EdgeInsets.fromLTRB(20, 5, 5, 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            'Photos',
-                            style: textStyle,
-                          ),
-                          VerticalDivider(
-                            width: 30,
-                            color: Palette.primaryTextColor,
-                          ),
-                          Text(
-                            'Videos',
-                            style: textStyle,
-                          ),
-                          VerticalDivider(
-                            width: 30,
-                            color: Palette.primaryTextColor,
-                          ),
-                          Text(
-                            'Files',
-                            style: textStyle,
-                          ),
-
-                        ],
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        padding: EdgeInsets.fromLTRB(20, 5, 5, 0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'Photos',
+                              style: textStyle,
+                            ),
+                            VerticalDivider(
+                              width: 30,
+                              color: Palette.primaryTextColor,
+                            ),
+                            Text(
+                              'Videos',
+                              style: textStyle,
+                            ),
+                            VerticalDivider(
+                              width: 30,
+                              color: Palette.primaryTextColor,
+                            ),
+                            Text(
+                              'Files',
+                              style: textStyle,
+                            ),
+                          ],
+                        ),
                       ),
                     )
                   ],
@@ -108,7 +111,7 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: Container(
                 child: Center(
                   child: CircleAvatar(
-                    radius: (80 - (width * .06)) / 2,
+                    radius: 30,
                     backgroundImage: AssetImage(Assets.user),
                   ),
                 ),
