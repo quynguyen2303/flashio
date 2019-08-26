@@ -5,15 +5,18 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import '../lib/pages/ConversationPage.dart';
 import 'package:flashio/main.dart';
-import '../lib/pages/ConversationPageList.dart';
+
 
 void main() {
   testWidgets('Main UI Test', (WidgetTester tester) async {
     // Build our app and trigger a frame
     await tester.pumpWidget(Flashio());
 
-    expect(find.byType(ConversationPageList), findsOneWidget);
+    expect(find.byType(ConversationPage),findsOneWidget);
+    expect(find.byType(PageView),findsOneWidget);
   });
 }
