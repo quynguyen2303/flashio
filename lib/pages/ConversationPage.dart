@@ -21,7 +21,12 @@ class _ConversationPageState extends State<ConversationPage> {
               Column(
                 children: <Widget>[
                   ChatListWidget(), // Chat list
-                  InputWidget(), // The input section
+                  GestureDetector(
+                    child: InputWidget(),
+                    onPanUpdate: (detail) {
+                      if (detail.delta.dy > 0) {}
+                    }, // The input section
+                  ),
                 ],
               )
             ],
