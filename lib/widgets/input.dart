@@ -22,7 +22,7 @@ class InputWidget extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 1.0),
               child: IconButton(
                 icon: Icon(Icons.face),
-                color: Palette.primaryColor,
+                color: Palette.accentColor,
                 onPressed: () {},
               ),
             ),
@@ -49,7 +49,7 @@ class InputWidget extends StatelessWidget {
               child: IconButton(
                 icon: Icon(Icons.send),
                 onPressed: () => {},
-                color: Palette.primaryColor,
+                color: Palette.accentColor,
               ),
             ),
             color: Colors.white,
