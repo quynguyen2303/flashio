@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/ConversationPageList.dart';
+import 'pages/ConversationPageSlide.dart';
 
 void main() => runApp(Flashio());
 
@@ -21,7 +21,7 @@ class Flashio extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: ConversationPageList(),
+      home: ConversationPageSlide(),
     );
   }
 }

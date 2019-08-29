@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import '../lib/pages/ConversationPage.dart';
 import '../lib/widgets/chat_app_bar.dart';
 import '../lib/widgets/chat_list.dart';
-import '../lib/widgets/input.dart';
 
 void main(){
   const MaterialApp app = MaterialApp(
@@ -17,7 +16,6 @@ void main(){
     await tester.pumpWidget(app);
 
     expect(find.byType(ChatAppBar),findsOneWidget);
-    expect(find.byType(InputWidget),findsOneWidget);
     expect(find.byType(ChatListWidget),findsOneWidget);
 
 
