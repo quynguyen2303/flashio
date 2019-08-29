@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/ConversationPageSlide.dart';
+import 'pages/RegisterPage.dart';
 
 void main() => runApp(Flashio());
 
@@ -8,6 +8,7 @@ class Flashio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flashio Chat',
       theme: ThemeData(
         // This is the theme of your application.
@@ -21,7 +22,7 @@ class Flashio extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: ConversationPageSlide(),
+      home: RegisterPage(),
     );
   }
 }

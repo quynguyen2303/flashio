@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/chat_app_bar.dart';
 import '../widgets/chat_list.dart';
-import '../widgets/input.dart';
-import '../widgets/conversation_bottom_sheet.dart';
+
 
 class ConversationPage extends StatefulWidget {
   const ConversationPage();
@@ -13,7 +12,6 @@ class ConversationPage extends StatefulWidget {
 }
 
 class _ConversationPageState extends State<ConversationPage> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
