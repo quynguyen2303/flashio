@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1049076809147",
+    "firebase_url": "https://flashio-a17c2.firebaseio.com",
+    "project_id": "flashio-a17c2",
+    "storage_bucket": "flashio-a17c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049076809147:android:8ab22d0443d82df7",
+        "android_client_info": {
+          "package_name": "com.app.flashio.flashio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1049076809147-66uu0s2loaju4apnfr4jb0l9vuah422k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCl9eqPWFjggCJ2xfj9HVo-FPLDRITEZ7s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1049076809147-66uu0s2loaju4apnfr4jb0l9vuah422k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
