@@ -7,17 +7,23 @@ import '../../models/user.dart';
 
 @immutable
 abstract class AuthenticationState extends Equatable {
-  AuthenticationState([List props = const []]) : super(props);
+  AuthenticationState([List props = const []]) : super();
 }
 
 class Uninitialized extends AuthenticationState {
   @override
   String toString() => 'Uninitialized';
+
+  @override
+  List<Object> get props => [];
 }
 
 class AuthInProgress extends AuthenticationState {
   @override
   String toString() => 'AuthInProgress';
+
+  @override
+  List<Object> get props => [];
 }
 
 class Authenticated extends AuthenticationState {
@@ -25,6 +31,9 @@ class Authenticated extends AuthenticationState {
   Authenticated(this.user);
   @override
   String toString() => 'Authenticated';
+
+  @override
+  List<Object> get props => [];
 }
 
 class PreFillData extends AuthenticationState {
@@ -32,11 +41,17 @@ class PreFillData extends AuthenticationState {
   PreFillData(this.user);
   @override
   String toString() => 'PreFillData';
+
+  @override
+  List<Object> get props => [];
 }
 
 class UnAuthenticated extends AuthenticationState {
   @override
   String toString() => 'UnAuthenticated';
+
+  @override
+  List<Object> get props => [];
 }
 
 class ReceivedProfilePicture extends AuthenticationState {
@@ -44,16 +59,25 @@ class ReceivedProfilePicture extends AuthenticationState {
   ReceivedProfilePicture(this.file);
   @override
   String toString() => 'ReceivedProfilePicture';
+
+  @override
+  List<Object> get props => [];
 }
 
 class ProfileUpdateInProgress extends AuthenticationState {
   @override
   String toString() => 'ProfileUpdateInProgress'; 
+
+  @override
+  List<Object> get props => [];
 }
 
 class ProfileUpdated extends AuthenticationState {
   @override
   String toString() => 'ProfileComplete';
+
+  @override
+  List<Object> get props => [];
 }
   
 // class InitialAuthenticationState extends AuthenticationState {}
