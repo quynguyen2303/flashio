@@ -1,7 +1,30 @@
 import 'package:flutter/material.dart';
-import 'pages/RegisterPage.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() => runApp(Flashio());
+import 'config/Palette.dart';
+
+import 'pages/RegisterPage.dart';
+import 'pages/ConversationPageSlide.dart';
+
+import 'blocs/authentication/bloc.dart';
+
+import 'repositories/AuthenticationRepository.dart';
+import 'repositories/UserDataRepository.dart';
+import 'repositories/StorageRepository.dart';
+
+void main() {
+  // create instances of the repositories to supply to the app
+  final AuthenticationRepository authRepository = AuthenticationRepository();
+  final UserDataRepository userDataRepository = UserDataRepository();
+  final StorageRepository storageRepository = StorageRepository();
+  runApp(BlocProvider(
+      builder: (context) => AuthenticationBloc(
+            authenticationRepository: authRepository,
+            userDataRepository: userDataRepository,
+            storageRepository: storageRepository,
+          )..dispatch(AppLaunched()),
+      child: Flashio()));
+}
 
 class Flashio extends StatelessWidget {
   // This widget is the root of your application.
@@ -11,18 +34,19 @@ class Flashio extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flashio Chat',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: RegisterPage(),
+      home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
+        builder: (context, state) {
+          if (state is UnAuthenticated) {
+            return RegisterPage();
+          } else if (state is ProfileUpdated) {
+            return ConversationPageSlide();
+          } else {
+            return RegisterPage();
+          }
+        },
+      ),
     );
   }
 }
